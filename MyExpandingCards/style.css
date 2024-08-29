@@ -1,39 +1,79 @@
-
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+  
 * {
     box-sizing: border-box;
 }
 
 h1 {
+    color: orange;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 40px;
+}
 
+p {
+    font-size: 34px;
+    padding-top: 57vh;
 }
 
 body {
+    font-family: "MedievalSharp", cursive;
     margin: 0px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    background-image: linear-gradient(red, black,black);
 }
 
 
 .container{
     display: flex;
-    width: 90vw;
+    width: 70vw;
 }
 
 .panel{
-    height: 85vh;
-    border: 5px solid;
+    height: 70vh;
+    border: 5px solid black;
     margin: 10px;
     flex: 0.5;
+
+    background-size: cover;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: 52% 10%;
+    cursor: pointer;
+    transition: flex 0.7s ease-in;
+}
+
+.panel p{
+    
+    color: red;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+    opacity: 80%;
+    transition: color 1s ease-out;
+    transition: border 1s ease-in;
     
 }
 
-.panel h3{
-    color: white;
+.panel.active{
+    flex: 8;
+    border: 5px solid white;
+    
 }
 
-.panel.active{
-    flex: 5;
+.panel.active p{
+    color: orange;
+}
+
+@media(max-width: 1080px)  { /* if width < 480px */
+    
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-child(4),.panel:nth-child(5), .panel:nth-child(6){ /*hide panel elements 4 and 5*/
+        display: none;
+    }
 }
